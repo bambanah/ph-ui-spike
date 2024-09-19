@@ -3,18 +3,16 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/shadcn/ui/table";
-import { ChevronRight } from "lucide-react";
-import { Badge } from "./ui/badge";
-import { useState } from "react";
-import { Button } from "./ui/button";
 import { cn } from "@/lib/shadcn/utils";
+import { ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 
 const cohorts = [
   {
