@@ -8,7 +8,7 @@ export const navConfig: { title: string; href: string }[] = [
     href: "/antd",
   },
   {
-    title: "Material UI",
-    href: "/mui",
+    title: "Mantine",
+    href: "/mantine",
   },
 ];

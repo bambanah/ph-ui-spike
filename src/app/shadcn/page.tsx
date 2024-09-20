@@ -84,15 +84,15 @@ const ShadcnPage = () => {
               </div>
             </div>
 
-            <Tabs defaultValue="overview" className="w-full">
-              <div className="max-w-6xl my-4 mx-auto">
+            <Tabs defaultValue="overview" className="w-full max-w-6xl mx-auto">
+              <div className="my-4">
                 <TabsList>
                   <TabsTrigger value="overview">Overview</TabsTrigger>
                   <TabsTrigger value="notebooks">Notebooks</TabsTrigger>
                 </TabsList>
               </div>
 
-              <TabsContent value="overview" className="max-w-6xl mx-auto">
+              <TabsContent value="overview" className="">
                 <Card>
                   <CardContent className="flex flex-col gap-8 p-6">
                     <div>
