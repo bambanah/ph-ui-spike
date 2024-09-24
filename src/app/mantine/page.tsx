@@ -1,5 +1,6 @@
 "use client";
 
+import FrameworkLinks from "@/components/mantine/framework-links";
 import ThemeToggle from "@/components/mantine/theme-toggle";
 import WorkbenchDataTable from "@/components/mantine/workbench-data-table";
 import WorkbenchNotebookTable from "@/components/mantine/workbench-notebook-table";
@@ -27,14 +28,11 @@ import {
 import "@mantine/core/styles.css";
 import { AlertTriangle, EllipsisVertical, Search } from "lucide-react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 function MantinePage() {
   const [mounted, setMounted] = useState(false);
   const computedColorScheme = useComputedColorScheme();
-
-  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -45,7 +43,7 @@ function MantinePage() {
   return (
     <AppShell
       navbar={{
-        width: 200,
+        width: 220,
         breakpoint: "sm",
       }}
       padding="md"
@@ -62,15 +60,19 @@ function MantinePage() {
           height={1702}
         />
         <Space h="md" />
-        {navConfig.map(({ href, title }) => (
+        {navConfig.map(({ href, title, icon }) => (
           <NavLink
             key={title}
             href={href}
             label={title}
-            active={pathname?.startsWith(href)}
+            leftSection={icon}
+            active={title === "Workbench"}
           />
         ))}
-        <ThemeToggle />
+        <Group justify="center" mt="auto" mb="md">
+          <ThemeToggle />
+          <FrameworkLinks />
+        </Group>
       </AppShell.Navbar>
 
       <AppShell.Main bg={computedColorScheme === "dark" ? "#111" : "gray.0"}>

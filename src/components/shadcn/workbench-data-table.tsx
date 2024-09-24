@@ -20,14 +20,14 @@ const cohorts = [
     patientCount: 127,
     completedDate: "31 Jan 2024",
     query:
-      'SELECT patient_id as patient_id FROM `mk-propel-dev-admin.mk_propel_dev_mk_propel_dev_synthea_dataset.vw_allergy_intolerances` WHERE CONTAINS_SUBSTR(patient_id, "1")',
+      'SELECT patient_id AS patient_id FROM `mk-propel-dev-admin.mk_propel_dev_mk_propel_dev_synthea_dataset.vw_allergy_intolerances` WHERE CONTAINS_SUBSTR(patient_id, "1")',
   },
   {
     name: "Second Query",
     patientCount: 2475,
     completedDate: "6 November 2022",
     query:
-      'SELECT patient_id as patient_id FROM `mk-propel-dev-admin.mk_propel_dev_mk_propel_dev_synthea_dataset.vw_allergy_intolerances` WHERE CONTAINS_SUBSTR(patient_id, "1")',
+      'SELECT patient_id AS patient_id FROM `mk-propel-dev-admin.mk_propel_dev_mk_propel_dev_synthea_dataset.vw_allergy_intolerances` WHERE CONTAINS_SUBSTR(patient_id, "1")',
   },
 ];
 
@@ -38,10 +38,10 @@ export function WorkbenchDataTable() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-8"></TableHead>
+          <TableHead className="w-[2rem]"></TableHead>
           <TableHead>Cohort Name</TableHead>
           <TableHead className="text-right w-[10rem]">Patient Count</TableHead>
-          <TableHead className="text-right w-[9rem]">Completed Date</TableHead>
+          <TableHead className="text-right w-[10rem]">Completed Date</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

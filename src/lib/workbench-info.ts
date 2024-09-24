@@ -3,10 +3,10 @@ export const workbenchPurpose =
 
 export const workbenchAttachments = [
   {
-    name: "Data Dictionary",
+    name: "Ethics Approval",
     description:
-      "This document provides a detailed description of the data used in this study, including the variables, their definitions, and the sources of the data.",
-    fileName: "data-dictionary.pdf",
+      "This document outlines the ethical principles and guidelines that will be followed in this study. It ensures that the study is conducted in an ethical and responsible manner, and that participants' rights and well-being are protected.",
+    fileName: "EthicsApproval.pdf",
   },
   {
     name: "Data Usage Agreement",

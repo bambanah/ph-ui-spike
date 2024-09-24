@@ -5,13 +5,15 @@ import { Button, Flex, Layout, Menu, MenuProps, theme } from "antd";
 import { Moon, Sun } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import FrameworkLinks from "./framework-links";
 
 const { Sider } = Layout;
 
 const navItems: MenuProps["items"] = navConfig.map((item) => {
   return {
-    key: item.href,
+    key: item.title,
     label: <Link href={item.href}>{item.title}</Link>,
+    icon: item.icon,
   };
 });
 
@@ -36,7 +38,7 @@ const Navbar = ({ algorithm, setAlgorithm }: Props) => {
 
   return (
     <Sider
-      width={200}
+      width={250}
       className="h-full px-2"
       style={{
         backgroundColor: colorBgBase,
@@ -58,21 +60,23 @@ const Navbar = ({ algorithm, setAlgorithm }: Props) => {
         />
         <Menu
           mode="inline"
-          defaultSelectedKeys={["/antd"]}
+          defaultSelectedKeys={["Workbench"]}
           style={{ borderRight: 0, backgroundColor: colorBgBase }}
           items={navItems}
         />
-        <Flex justify="center" className="mt-auto mb-4">
+        <Flex justify="center" gap={"0.5rem"} className="mt-auto mb-4">
           <Button
             icon={
               algorithm === "darkAlgorithm" ? (
-                <Moon className="w-4 h-4" />
+                <Moon className="w-[1.2rem] h-[1.2rem]" />
               ) : (
-                <Sun className="w-4 h-4" />
+                <Sun className="w-[1.2rem] h-[1.2rem]" />
               )
             }
+            type="text"
             onClick={toggleAlgorithm}
           />
+          <FrameworkLinks />
         </Flex>
       </div>
     </Sider>

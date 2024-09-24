@@ -26,12 +26,7 @@ const ThemeToggle = () => {
   if (!mounted) return null;
 
   return (
-    <ActionIcon
-      className="mt-auto mx-auto"
-      variant="default"
-      size="lg"
-      onClick={toggleColorScheme}
-    >
+    <ActionIcon variant="default" size="lg" onClick={toggleColorScheme}>
       <Sun
         className={cn(
           "h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all",

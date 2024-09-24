@@ -21,9 +21,10 @@ import {
 import { WorkbenchDataTable } from "@/components/shadcn/workbench-data-table";
 import { WorkbenchNotebooksTable } from "@/components/shadcn/workbench-notebooks-table";
 import { WorkbenchUsersTable } from "@/components/shadcn/workbench-users-table";
-import { workbenchPurpose } from "@/lib/workbench-info";
-import { AlertCircle, EllipsisVertical, Plus, Search } from "lucide-react";
+import { workbenchAttachments, workbenchPurpose } from "@/lib/workbench-info";
+import { EllipsisVertical, Plus, Search } from "lucide-react";
 import Link from "next/link";
+import FileLink from "./ui/file-link";
 
 const WorkbenchPage = () => {
   return (
@@ -65,9 +66,13 @@ const WorkbenchPage = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <h4>Attachments</h4>
-                <div className="flex gap-2 items-center">
-                  <AlertCircle className="text-red-500" />
-                  <p>No attachments in this workbench</p>
+                <div className="flex flex-col items-start gap-2">
+                  {workbenchAttachments.map((attachment) => (
+                    <FileLink
+                      key={attachment.name}
+                      fileName={attachment.fileName}
+                    />
+                  ))}
                 </div>
               </div>
               <div className="flex flex-col gap-2">
