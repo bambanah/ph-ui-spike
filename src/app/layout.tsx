@@ -26,12 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="auto" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider defaultColorScheme="auto" withGlobalClasses>
+          {children}
+        </MantineProvider>
       </body>
     </html>
   );

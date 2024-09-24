@@ -60,12 +60,13 @@ const AntDesignPage = () => {
           />
         </Sider>
         <Layout className="overflow-y-auto max-w-6xl mx-auto p-4">
-          <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>
-              <Link href="#">Workbenches</Link>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>Test Workbench</Breadcrumb.Item>
-          </Breadcrumb>
+          <Breadcrumb
+            style={{ margin: "16px 0" }}
+            items={[
+              { href: "#", title: "Workbenches" },
+              { title: "Test Workbench" },
+            ]}
+          />
           <Content
             style={{
               padding: 24,

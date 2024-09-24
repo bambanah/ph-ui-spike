@@ -49,7 +49,7 @@ const ShadcnPage = () => {
           <Navbar />
 
           <div className="bg-muted/40 min-h-screen p-8">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <div className="w-full flex gap-2 items-center">
                 <Breadcrumb>
                   <BreadcrumbList>
@@ -84,7 +84,7 @@ const ShadcnPage = () => {
               </div>
             </div>
 
-            <Tabs defaultValue="overview" className="w-full max-w-6xl mx-auto">
+            <Tabs defaultValue="overview" className="w-full max-w-4xl mx-auto">
               <div className="my-4">
                 <TabsList>
                   <TabsTrigger value="overview">Overview</TabsTrigger>
