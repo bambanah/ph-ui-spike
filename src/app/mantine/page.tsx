@@ -2,24 +2,29 @@
 
 import ThemeToggle from "@/components/mantine/theme-toggle";
 import WorkbenchDataTable from "@/components/mantine/workbench-data-table";
+import WorkbenchNotebookTable from "@/components/mantine/workbench-notebook-table";
 import WorkbenchUserTable from "@/components/mantine/workbench-user-table";
 import { navConfig } from "@/lib/nav-config";
 import {
+  ActionIcon,
   Anchor,
   AppShell,
   Breadcrumbs,
+  Button,
   Container,
   Group,
+  Menu,
   NavLink,
   Paper,
   Space,
   Stack,
   Tabs,
+  TextInput,
   Title,
   useComputedColorScheme,
 } from "@mantine/core";
 import "@mantine/core/styles.css";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, EllipsisVertical, Search } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -69,10 +74,26 @@ function MantinePage() {
 
       <AppShell.Main bg={computedColorScheme === "dark" ? "#111" : "gray.0"}>
         <Container size="md" pt="md">
-          <Breadcrumbs>
-            <Anchor href="#">Workbenches</Anchor>
-            <span>Test Workbench</span>
-          </Breadcrumbs>
+          <Group justify="space-between">
+            <Breadcrumbs>
+              <Anchor href="#">Workbenches</Anchor>
+              <span>Test Workbench</span>
+            </Breadcrumbs>
+            <Group>
+              <Button variant="outline">Edit Workbench</Button>
+              <Menu>
+                <Menu.Target>
+                  <ActionIcon variant="transparent">
+                    <EllipsisVertical />
+                  </ActionIcon>
+                </Menu.Target>
+
+                <Menu.Dropdown>
+                  <Menu.Item>Publish Cohort</Menu.Item>
+                </Menu.Dropdown>
+              </Menu>
+            </Group>
+          </Group>
 
           <Space h="xl" />
 
@@ -83,37 +104,48 @@ function MantinePage() {
                 <Tabs.Tab value="notebooks">Notebooks</Tabs.Tab>
               </Tabs.List>
 
-              <Space h="xl" />
+              <Space h="md" />
 
               <Tabs.Panel value="overview">
                 <Stack gap="xl">
                   <Stack gap="xs">
-                    <Title order={3}>Purpose</Title>
+                    <Title order={4}>Purpose</Title>
                     <p>
                       Showcasing what a workbench page would look like built
                       with the Mantine library.
                     </p>
                   </Stack>
                   <Stack gap="xs">
-                    <Title order={3}>Attachments</Title>
+                    <Title order={4}>Attachments</Title>
                     <Group gap="xs">
                       <AlertTriangle className="text-red-500" /> No attachments
                       in this workbench
                     </Group>
                   </Stack>
                   <Stack gap="xs">
-                    <Title order={3}>Workbench Data</Title>
+                    <Title order={4}>Workbench Data</Title>
                     <WorkbenchDataTable />
                   </Stack>
                   <Stack gap="xs">
-                    <Title order={3}>Workbench Users</Title>
+                    <Title order={4}>Workbench Users</Title>
                     <WorkbenchUserTable />
                   </Stack>
                 </Stack>
               </Tabs.Panel>
 
               <Tabs.Panel value="notebooks">
-                <Stack gap="xl"></Stack>
+                <Stack gap="md">
+                  <Group justify="space-between">
+                    <Group gap={"0.5rem"}>
+                      <TextInput placeholder="Search..." />
+                      <ActionIcon size="lg" variant="light">
+                        <Search className="w-4 h-4" />
+                      </ActionIcon>
+                    </Group>
+                    <Button>Create Notebook</Button>
+                  </Group>
+                  <WorkbenchNotebookTable />
+                </Stack>
               </Tabs.Panel>
             </Tabs>
           </Paper>
