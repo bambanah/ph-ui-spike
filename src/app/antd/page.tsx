@@ -4,7 +4,19 @@ import NotebookContent from "@/components/antd/notebooks-content";
 import OverviewContent from "@/components/antd/overview-content";
 import { navConfig } from "@/lib/nav-config";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { Breadcrumb, Layout, Menu, MenuProps, Tabs, theme } from "antd";
+import {
+  Breadcrumb,
+  Button,
+  Dropdown,
+  Flex,
+  Layout,
+  Menu,
+  MenuProps,
+  Space,
+  Tabs,
+  theme,
+} from "antd";
+import { EllipsisVertical } from "lucide-react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,14 +71,33 @@ const AntDesignPage = () => {
             items={navItems}
           />
         </Sider>
-        <Layout className="overflow-y-auto max-w-6xl mx-auto p-4">
-          <Breadcrumb
-            style={{ margin: "16px 0" }}
-            items={[
-              { href: "#", title: "Workbenches" },
-              { title: "Test Workbench" },
-            ]}
-          />
+        <Layout className="overflow-y-auto max-w-4xl mx-auto p-4">
+          <Flex justify="space-between">
+            <Breadcrumb
+              style={{ margin: "16px 0" }}
+              items={[
+                { href: "#", title: "Workbenches" },
+                { title: "Test Workbench" },
+              ]}
+            />
+            <Space>
+              <Button>Edit Workbench</Button>
+              <Dropdown
+                trigger={["click"]}
+                placement={"bottomCenter"}
+                menu={{
+                  items: [
+                    {
+                      label: <Link href="#">Publish Cohort</Link>,
+                      key: "publish",
+                    },
+                  ],
+                }}
+              >
+                <Button icon={<EllipsisVertical />} type="text" />
+              </Dropdown>
+            </Space>
+          </Flex>
           <Content
             style={{
               padding: 24,
