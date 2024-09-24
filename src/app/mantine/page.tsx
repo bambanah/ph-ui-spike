@@ -5,6 +5,7 @@ import WorkbenchDataTable from "@/components/mantine/workbench-data-table";
 import WorkbenchNotebookTable from "@/components/mantine/workbench-notebook-table";
 import WorkbenchUserTable from "@/components/mantine/workbench-user-table";
 import { navConfig } from "@/lib/nav-config";
+import { workbenchPurpose } from "@/lib/workbench-info";
 import {
   ActionIcon,
   Anchor,
@@ -110,10 +111,7 @@ function MantinePage() {
                 <Stack gap="xl">
                   <Stack gap="xs">
                     <Title order={4}>Purpose</Title>
-                    <p>
-                      Showcasing what a workbench page would look like built
-                      with the Mantine library.
-                    </p>
+                    <p>{workbenchPurpose}</p>
                   </Stack>
                   <Stack gap="xs">
                     <Title order={4}>Attachments</Title>
