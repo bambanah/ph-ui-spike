@@ -76,8 +76,8 @@ export function WorkbenchDataTable() {
               </Badge>
               <div
                 className={cn(
-                  "mt-2 bg-muted/40 p-2 rounded-md font-mono",
-                  expanded.includes(cohort.name) ? "block" : "hidden"
+                  "mt-2 bg-muted/40 p-2 rounded-md font-mono overflow-x-auto max-w-[35rem]",
+                  expanded.includes(cohort.name) ? "inline-block" : "hidden"
                 )}
               >
                 {cohort.query}

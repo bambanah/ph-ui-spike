@@ -30,3 +30,13 @@ export const H3 = ({ className, ...rest }: HTMLProps<HTMLHeadingElement>) => (
     {...rest}
   />
 );
+
+export const H4 = ({ className, ...rest }: HTMLProps<HTMLHeadingElement>) => (
+  <h4
+    className={cn(
+      "scroll-m-20 text-xl font-semibold tracking-tight",
+      className
+    )}
+    {...rest}
+  />
+);

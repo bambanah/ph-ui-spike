@@ -47,7 +47,7 @@ const WorkbenchDataTable = () => {
         ),
       }))}
       columns={columns}
-      rowKey="name"
+      rowKey={(record) => record.completedDate}
       pagination={false}
     />
   );

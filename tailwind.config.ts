@@ -12,6 +12,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         mono: "var(--font-geist-mono), monospace",
+        sans: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
       },
       colors: {
         background: "hsl(var(--background))",
