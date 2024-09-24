@@ -5,20 +5,21 @@ import WorkbenchPage from "@/components/antd/workbench-page";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider, Layout, theme } from "antd";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AntDesignPage = () => {
-  const getLocalStorageTheme = () => {
-    const theme = localStorage.getItem("ant-theme");
-
-    if (theme === "darkAlgorithm" || theme === "defaultAlgorithm") {
-      return theme;
-    }
-  };
-
   const [algorithm, setAlgorithm] = useState<
     "darkAlgorithm" | "defaultAlgorithm"
-  >(getLocalStorageTheme() ?? "defaultAlgorithm");
+  >("defaultAlgorithm");
+
+  useEffect(() => {
+    const theme = localStorage.getItem("ant-theme");
+    console.log(theme);
+
+    if (theme === "darkAlgorithm" || theme === "defaultAlgorithm") {
+      setAlgorithm(theme);
+    }
+  }, []);
 
   return (
     <ConfigProvider theme={{ algorithm: theme[algorithm] }}>

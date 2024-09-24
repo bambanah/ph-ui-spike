@@ -30,10 +30,11 @@ const Navbar = ({ algorithm, setAlgorithm }: Props) => {
   } = theme.useToken();
 
   const toggleAlgorithm = () => {
-    setAlgorithm(
-      algorithm === "darkAlgorithm" ? "defaultAlgorithm" : "darkAlgorithm"
-    );
-    localStorage.setItem("ant-theme", algorithm);
+    const newAlgorithm =
+      algorithm === "darkAlgorithm" ? "defaultAlgorithm" : "darkAlgorithm";
+
+    localStorage.setItem("ant-theme", newAlgorithm);
+    setAlgorithm(newAlgorithm);
   };
 
   return (
@@ -42,8 +43,7 @@ const Navbar = ({ algorithm, setAlgorithm }: Props) => {
       className="h-full px-2"
       style={{
         backgroundColor: colorBgBase,
-        borderRight: `solid ${colorBorderSecondary}`,
-        borderRightWidth: "1px",
+        borderRight: `1px solid ${colorBorderSecondary}`,
       }}
     >
       <div className="py-4 flex flex-col gap-2 h-full">
