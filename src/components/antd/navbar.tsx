@@ -1,7 +1,8 @@
 "use client";
 
 import { navConfig } from "@/lib/nav-config";
-import { Button, Layout, Menu, MenuProps, theme } from "antd";
+import { Button, Flex, Layout, Menu, MenuProps, theme } from "antd";
+import { Moon, Sun } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,6 +31,7 @@ const Navbar = ({ algorithm, setAlgorithm }: Props) => {
     setAlgorithm(
       algorithm === "darkAlgorithm" ? "defaultAlgorithm" : "darkAlgorithm"
     );
+    localStorage.setItem("ant-theme", algorithm);
   };
 
   return (
@@ -42,7 +44,7 @@ const Navbar = ({ algorithm, setAlgorithm }: Props) => {
         borderRightWidth: "1px",
       }}
     >
-      <div className="py-4">
+      <div className="py-4 flex flex-col gap-2 h-full">
         <Image
           alt="propel logo"
           width={200}
@@ -54,14 +56,25 @@ const Navbar = ({ algorithm, setAlgorithm }: Props) => {
           }
           className="border-border"
         />
+        <Menu
+          mode="inline"
+          defaultSelectedKeys={["/antd"]}
+          style={{ borderRight: 0, backgroundColor: colorBgBase }}
+          items={navItems}
+        />
+        <Flex justify="center" className="mt-auto mb-4">
+          <Button
+            icon={
+              algorithm === "darkAlgorithm" ? (
+                <Moon className="w-4 h-4" />
+              ) : (
+                <Sun className="w-4 h-4" />
+              )
+            }
+            onClick={toggleAlgorithm}
+          />
+        </Flex>
       </div>
-      <Menu
-        mode="inline"
-        defaultSelectedKeys={["/antd"]}
-        style={{ borderRight: 0, backgroundColor: colorBgBase }}
-        items={navItems}
-      />
-      <Button onClick={toggleAlgorithm}>Dark</Button>
     </Sider>
   );
 };

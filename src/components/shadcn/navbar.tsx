@@ -37,7 +37,7 @@ const Navbar = () => {
             key={title}
             href={href}
             className={cn(
-              "flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:bg-muted hover:text-foreground",
+              "flex items-center gap-3 rounded-lg px-4 py-3 transition-all hover:bg-muted hover:text-foreground",
               pathname?.startsWith(href)
                 ? "bg-muted text-foreground"
                 : "text-muted-foreground"

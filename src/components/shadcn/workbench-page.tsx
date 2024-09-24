@@ -18,7 +18,6 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/shadcn/ui/tabs";
-import { H4 } from "@/components/shadcn/ui/typography";
 import { WorkbenchDataTable } from "@/components/shadcn/workbench-data-table";
 import { WorkbenchNotebooksTable } from "@/components/shadcn/workbench-notebooks-table";
 import { WorkbenchUsersTable } from "@/components/shadcn/workbench-users-table";
@@ -30,7 +29,7 @@ const WorkbenchPage = () => {
   return (
     <Card className="w-full max-w-4xl mx-auto mt-4">
       <CardHeader>
-        <CardTitle className="flex w-full items-center">
+        <CardTitle className="flex w-full gap-2 items-center">
           <span>Test Workbench</span>
           <Button variant="outline" className="ml-auto">
             Edit Workbench
@@ -61,22 +60,22 @@ const WorkbenchPage = () => {
           <TabsContent value="overview">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <H4>Purpose</H4>
-                <p className="leading-7">{workbenchPurpose}</p>
+                <h4>Purpose</h4>
+                <p>{workbenchPurpose}</p>
               </div>
               <div className="flex flex-col gap-2">
-                <H4>Attachments</H4>
-                <span className="flex gap-2">
-                  <AlertCircle className="text-red-500" /> No attachments in
-                  this workbench
-                </span>
+                <h4>Attachments</h4>
+                <div className="flex gap-2 items-center">
+                  <AlertCircle className="text-red-500" />
+                  <p>No attachments in this workbench</p>
+                </div>
               </div>
               <div className="flex flex-col gap-2">
-                <H4>Workbench Data</H4>
+                <h4>Workbench Data</h4>
                 <WorkbenchDataTable />
               </div>
               <div className="flex flex-col gap-2">
-                <H4>Workbench Users</H4>
+                <h4>Workbench Users</h4>
                 <WorkbenchUsersTable />
               </div>
             </div>

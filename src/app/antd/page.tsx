@@ -8,9 +8,17 @@ import Head from "next/head";
 import { useState } from "react";
 
 const AntDesignPage = () => {
+  const getLocalStorageTheme = () => {
+    const theme = localStorage.getItem("ant-theme");
+
+    if (theme === "darkAlgorithm" || theme === "defaultAlgorithm") {
+      return theme;
+    }
+  };
+
   const [algorithm, setAlgorithm] = useState<
     "darkAlgorithm" | "defaultAlgorithm"
-  >("darkAlgorithm");
+  >(getLocalStorageTheme() ?? "defaultAlgorithm");
 
   return (
     <ConfigProvider theme={{ algorithm: theme[algorithm] }}>

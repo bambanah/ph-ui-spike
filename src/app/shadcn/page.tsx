@@ -3,6 +3,8 @@ import { ThemeProvider } from "@/components/shadcn/theme-provider";
 import WorkbenchPage from "@/components/shadcn/workbench-page";
 import { Metadata } from "next";
 
+import "./shadcn.css";
+
 export const metadata: Metadata = {
   title: "Shadcn",
 };
