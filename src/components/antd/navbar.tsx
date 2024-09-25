@@ -46,7 +46,7 @@ const Navbar = ({ algorithm, setAlgorithm }: Props) => {
         borderRight: `1px solid ${colorBorderSecondary}`,
       }}
     >
-      <div className="py-4 flex flex-col gap-2 h-full">
+      <div className="py-4 flex flex-col gap-6 h-full">
         <Image
           alt="propel logo"
           width={200}
@@ -56,7 +56,7 @@ const Navbar = ({ algorithm, setAlgorithm }: Props) => {
               ? "/ph-banner-light.png"
               : "/ph-banner-dark.png"
           }
-          className="border-border"
+          className="mx-auto"
         />
         <Menu
           mode="inline"
