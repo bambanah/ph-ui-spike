@@ -36,7 +36,7 @@ const WorkbenchPage = () => {
           <Button>Edit Workbench</Button>
           <Dropdown
             trigger={["click"]}
-            placement={"bottomCenter"}
+            placement={"bottom"}
             menu={{
               items: [
                 {

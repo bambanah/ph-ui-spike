@@ -17,10 +17,10 @@ const ShadcnPage = () => {
       enableSystem
       disableTransitionOnChange
     >
-      <div className="grid min-h-screen w-full md:grid-cols-[200px_1fr]">
+      <div className="grid h-screen w-full md:grid-cols-[200px_1fr]">
         <Navbar />
 
-        <div className="bg-muted/40 min-h-screen p-8">
+        <div className="bg-muted/40 min-h-screen overflow-y-auto p-8">
           <WorkbenchPage />
         </div>
       </div>

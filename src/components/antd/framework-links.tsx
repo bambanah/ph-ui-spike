@@ -7,7 +7,7 @@ const FrameworkLinks = () => {
   return (
     <Dropdown
       trigger={["click"]}
-      placement={"bottomCenter"}
+      placement={"bottom"}
       menu={{
         items: [
           {
